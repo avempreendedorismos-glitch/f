@@ -1,0 +1,447 @@
+﻿<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>American Fit — Sua jornada fitness começa aqui</title>
+  <link rel="stylesheet" href="script.css">
+  <style>
+    /* Fundo com imagem fornecida + fallback verde */
+    body {
+      background-color: lab(89.58% -35.29 59.64);
+      background-image: url("images/american-fit.jpg");
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      background-attachment: fixed;
+      margin: 0;
+      min-height: 100vh;
+      font-size: 20px;
+    }
+
+    /* Seção de capa no topo usando a imagem base64 fornecida */
+    .cover {
+      height: 52vh;
+      min-height: 320px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      text-align: center;
+      color: #ffffff;
+      background-image: url("data:image/jpeg;base64,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... (truncated for brevity)");
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      background-attachment: scroll;
+      position: relative;
+    }
+    .cover .header-title { color: #ffffff; text-shadow: 0 6px 18px rgba(0,0,0,0.45); }
+    .cover .tagline { color: rgba(255,255,255,0.95); text-shadow: 0 4px 12px rgba(0,0,0,0.35); }
+
+    /* Título principal sem barra - maior, branco e com destaque */
+    .header-title {
+      text-align: center;
+      margin: 20px 12px 0;
+      font-size: 4.5rem;
+      font-weight: 900;
+      color: #ffffff;
+      letter-spacing: 2.5px;
+      text-transform: uppercase;
+      text-shadow: 0 8px 24px rgba(0,0,0,0.5), 0 4px 12px rgba(198,22,22,0.4);
+      line-height: 1.1;
+    }
+    @media (min-width: 768px) {
+      .header-title { font-size: 5.5rem; }
+    }
+    .tagline {
+      color: #000000;
+      text-align: center;
+      margin: 14px 12px 28px;
+      font-size: 3rem;
+      font-weight: 800;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      text-shadow: 0 6px 18px rgba(0,0,0,0.35);
+    }
+    @media (min-width: 768px) {
+      .top-bar h1 { font-size: 1.5rem; }
+      .tagline { font-size: 4.2rem; }
+    }
+
+    /* Estilos para a seção de descrição do produto (sem caixa/borda) */
+    .product-desc {
+      max-width: 900px;
+      margin: 24px auto;
+      padding: 0 12px; /* espaçamento leve, sem caixa */
+      background: transparent; /* sem fundo */
+      border-radius: 0;
+      box-shadow: none;
+      color: #222222;
+      line-height: 1.6;
+    }
+    .product-desc h2 { margin-top: 0; color: #c61616; font-size: 1.75rem; }
+    .product-desc h3 { margin-bottom: 8px; color: #333333; font-size: 1.25rem; }
+    .product-desc ul { padding-left: 1.2rem; }
+    .product-desc .note { font-style: italic; color: #ffffff; margin-top: 12px; }
+
+    @media (prefers-color-scheme: dark) {
+      .product-desc { background: #0f1720; color: #e6eef6; }
+    }
+
+    /* Estilos para imagem do produto */
+    .product-image img {
+      max-width: 100%;
+      height: auto;
+      display: block;
+      margin: 0 auto 16px;
+      border-radius: 6px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.08);
+    }
+    .product-image figcaption {
+      text-align: center;
+      color: #ffffff;
+      font-size: 1.3rem;
+      font-weight: 700;
+      margin-top: 10px;
+      letter-spacing: 0.8px;
+      text-shadow: 0 4px 12px rgba(0,0,0,0.6), 0 2px 6px rgba(198,22,22,0.3);
+    }
+
+    /* Estilos para a seção de depoimentos */
+    .testimonials {
+      max-width: 900px;
+      margin: 28px auto;
+      padding: 18px;
+      display: grid;
+      gap: 12px;
+    }
+    @media (min-width: 700px) {
+      .testimonials { grid-template-columns: repeat(2, 1fr); }
+    }
+    .testimonial {
+      background: #000000; /* fundo preto */
+      border-radius: 8px;
+      padding: 16px 18px;
+      box-shadow: 0 1px 3px rgba(255,255,255,0.03);
+      color: #ffffff; /* texto em branco */
+    }
+    .testimonial p { margin: 0 0 10px; line-height: 1.6; font-size: 1.05rem; }
+    .testimonial .author { font-weight: 700; color: #c61616; font-size: 1.05rem; }
+    @media (prefers-color-scheme: dark) {
+      .testimonial { background: #000000; color: #ffffff; box-shadow: none; }
+      .testimonial .author { color: #ffb4b4; }
+    }
+  </style>
+</head>
+<body>
+  <header class="cover" role="banner">
+    <h1 class="header-title">AMERICAN FIT</h1>
+    <p class="tagline">A SUA JORNADA FIT COMEÇA AQUI</p>
+  </header>
+  <main>
+    <section class="product-desc" aria-labelledby="product-title">
+  
+      <h3>💊 O que é o American Fit</h3>
+      <p>O American Fit é um suplemento emagrecedor formulado com ingredientes naturais, desenvolvido para atuar no organismo estimulando o emagrecimento saudável e acelerado sem dietas restritivas nem exercícios intensivos — ideal para pessoas que buscam apoio extra no processo de perda de peso.</p>
+
+      <h3>🔥 Principais Benefícios Alegados</h3>
+      <ul>
+        <li><strong>🏃‍♀️ 1. Acelera o Metabolismo</strong>
+          <p>O produto utiliza tecnologia conhecida como Time-Release que, segundo os fabricantes, aumenta a capacidade do seu corpo em transformar calorias em energia, estimulando a queima de gordura corporal de forma contínua ao longo do dia.</p>
+        </li>
+        <li><strong>⚡ 2. Termogênese Potenciada</strong>
+          <p>Ao estimular a termogênese — o processo natural de queima calórica do corpo — o American Fit pode contribuir para reduzir gordura localizada, incentivando o organismo a usar gordura como fonte de energia.</p>
+        </li>
+        <li><strong>🍽️ 3. Redução do Apetite e Saciedade</strong>
+          <p>Os componentes da fórmula podem formar um gel no estômago que ajuda a reduzir o apetite, promovendo sensação de saciedade e, assim, reduzindo o consumo impulsivo de calorias ao longo do dia.</p>
+        </li>
+        <li><strong>💦 4. Melhora a Saúde Intestinal</strong>
+          <p>O suplemento contém fibras que, além de ajudarem na perda de peso, podem regular o intestino, melhorando a digestão e o funcionamento do sistema digestivo.</p>
+        </li>
+        <li><strong>🍃 5. Detox Natural do Organismo</strong>
+          <p>Alguns ingredientes têm ação desintoxicante suave, auxiliando na eliminação de toxinas e na redução de inflamação, o que pode refletir em mais energia e bem-estar geral.</p>
+        </li>
+      </ul>
+
+      <h3>🌿 Compostos Naturais da Fórmula</h3>
+      <ul>
+        <li><strong>Cúrcuma</strong> – antioxidante e anti-inflamatório natural que pode ajudar a reduzir gordura e dores musculares.</li>
+        <li><strong>Cavalinha</strong> – diurético leve que combate inchaço e retenção de líquidos.</li>
+        <li><strong>Picolinato de Cromo</strong> – ajuda no controle do apetite e na regulação glicêmica.</li>
+        <li><strong>Café Verde</strong> – termogênico clássico que estimula o metabolismo.</li>
+        <li><strong>Spirulina</strong> – promovendo sensação de saciedade e antioxidantes.</li>
+        <li><strong>Quitosana e Psyllium</strong> – fibras que ajudam no trânsito intestinal e aumento da saciedade.</li>
+      </ul>
+
+      <h3>💎 Vantagens do Produto</h3>
+      <ul>
+        <li>📌 Fórmula 100% natural, sem substâncias artificiais agressivas.</li>
+        <li>📌 Promove perda de peso de forma gradual e segura quando associada a hábitos saudáveis.</li>
+        <li>📌 Pode regular o apetite e reduzir a vontade de comer, auxiliando no controle calórico.</li>
+        <li>📌 Atua também na saúde intestinal, um fator importante para o emagrecimento sustentável.</li>
+      </ul>
+
+      <p class="note">👉 Isso não significa que o produto seja perigoso, mas resultados podem variar muito de pessoa para pessoa, e ele não substitui um plano de alimentação equilibrado nem acompanhamento profissional de saúde ou nutricionista.</p>
+
+      <h3>🧠 Resumo Final</h3>
+      <p>O American Fit é um suplemento emagrecedor com formulação natural que promete acelerar o metabolismo, controlar o apetite, promover queima de gordura e melhorar o funcionamento intestinal — tudo sem dietas extremas. Ele pode ser interessante para quem busca apoio extra no processo de perda de peso, mas é importante ter expectativas realistas e saber que resultados variam e relatos de eficácia positiva são mistos.</p>
+      <figure class="product-image">
+        <img src="images/american-fit.jpg" alt="Embalagem do American Fit" />
+        <figcaption>American Fit — Suplemento natural</figcaption>
+      </figure>
+    </section>
+
+    <section class="testimonials" aria-labelledby="testimonials-title">
+      <h2 id="testimonials-title">⭐ Depoimentos Positivos de Clientes</h2>
+
+      <article class="testimonial">
+        <p>"Comecei a usar o American Fit há 8 semanas e já perdi 6 kg! Nunca tive tanta energia e meu apetite ficou super controlado. Realmente faz diferença no meu dia a dia. Recomendo!"</p>
+        <div class="author">— Mariana S., 34 anos</div>
+      </article>
+
+      <article class="testimonial">
+        <p>"Eu já havia tentado várias fórmulas para emagrecer, mas foi com o American Fit que finalmente vi resultado. Minha cintura diminuiu e me sinto muito mais disposta para caminhar e malhar."</p>
+        <div class="author">— Juliana M., 28 anos</div>
+      </article>
+
+      <article class="testimonial">
+        <p>"Adorei esse produto! Me ajudou a reduzir aquela vontade de beliscar fora de hora e meu corpo começa a mudar toda semana. As pessoas já notaram e perguntam o que estou fazendo!"</p>
+        <div class="author">— Camila A., 40 anos</div>
+      </article>
+
+      <article class="testimonial">
+        <p>"Simplesmente surpreendente! Em apenas um mês notei que minhas roupas ficaram mais folgadas e perdi medidas no abdômen. Sem efeitos colaterais, natural e tranquilo de tomar."</p>
+        <div class="author">— Raquel P., 37 anos</div>
+      </article>
+
+      <article class="testimonial">
+        <p>"O American Fit virou meu melhor aliado! Estava estagnada na perda de peso há meses, e com ele consegui desbloquear meu metabolismo. Estou muito feliz com os resultados!"</p>
+        <div class="author">— Fernanda C., 31 anos</div>
+      </article>
+
+      <article class="testimonial">
+        <p>"Produto excelente! Senti diferença logo nas primeiras semanas — menos fome, mais foco nas minhas refeições e resultados constantes. Super indico para quem quer emagrecer com qualidade."</p>
+        <div class="author">— Larissa T., 29 anos</div>
+      </article>
+    </section>
+  </main>
+  <script src="style.js"></script>
+</body>
+</html>
+
+
+  <style>
+    /* barra separadora entre perguntas e depoimentos */
+    .separator {
+      border: 0;
+      height: 6px;
+      background: linear-gradient(90deg, #e74c3c, #f39c12);
+      margin: 40px 0;
+      border-radius: 3px;
+    }
+
+    /* barra preta acima das perguntas */
+    .top-bar {
+      border: 0;
+      height: 8px;
+      background: #000;
+      margin: 20px 0 30px 0;
+      border-radius: 2px;
+    }
+  </style>
+</head>
+
+  
+  <style>
+    /* barra separadora entre perguntas e depoimentos */
+    .separator {
+      border: 0;
+      height: 6px;
+      background: linear-gradient(90deg, #e74c3c, #f39c12);
+      margin: 40px 0;
+      border-radius: 3px;
+    }
+
+    /* barra preta acima das perguntas */
+    .top-bar {
+      border: 0;
+      height: 8px;
+      background: #000;
+      margin: 20px 0 30px 0;
+      border-radius: 2px;
+    }
+  </style>
+</head>
+
+
+  <!-- Barra preta acima das perguntas -->
+  <hr class="top-bar" />
+
+  <section id="questions" class="faq">
+    <h2>Pense nisso</h2>
+    <ol>
+      <li>Você já tentou de tudo — dietas, jejum e academias — e mesmo assim continua sem resultados visíveis?</li>
+      <li>O seu corpo parece “travar” e não responde mais aos esforços para perder peso, mesmo seguindo um plano de alimentação saudável?</li>
+      <li>Quantas vezes você já desistiu no meio do caminho porque tinha tanta fome, ansiedade ou vontade de comer que simplesmente não conseguiu continuar?</li>
+      <li>Você está cansado(a) de sentir o corpo inchado e pesado todos os dias, sem saber como reverter isso?</li>
+      <li>E se houvesse um método que não só acelerasse sua queima de gordura, mas também ajudasse a diminuir a ansiedade e a compulsão alimentar?</li>
+      <li>Porque até agora isso tem funcionado pra você?</li>
+      <li>Quanto você acha que sua vida mudaria se amanhã você acordasse com mais disposição, menos fome e um metabolismo ativo?</li>
+      <li>Você está cansado(a) de produtos que prometem resultados rápidos, mas no fim não entregam nada e só deixam você frustrado(a)?</li>
+      <li>Se existisse algo que não só ajudasse a emagrecer, mas também trabalhasse seu intestino, disposição e saúde geral, você estaria disposto(a) a testar?</li>
+    </ol>
+  </section>
+
+  
+  <style>
+    /* barra separadora entre perguntas e depoimentos (preta) */
+    .separator {
+      border: 0;
+      height: 6px;
+      background: #000;
+      margin: 40px 0;
+      border-radius: 3px;
+    }
+
+    /* barra preta acima das perguntas */
+    .top-bar {
+      border: 0;
+      height: 8px;
+      background: #000;
+      margin: 20px 0 30px 0;
+      border-radius: 2px;
+    }
+
+    /* estilo da seção de perguntas: fundo preto, texto branco e espaçamento */
+    #questions.faq {
+      background: #000;
+      color: #fff;
+      padding: 24px;
+      border-radius: 6px;
+    }
+
+    #questions.faq h2 {
+      color: #fff;
+      margin-top: 0;
+    }
+
+    #questions.faq ol {
+      margin: 0;
+      padding-left: 1.25rem;
+    }
+
+    #questions.faq li {
+      margin-bottom: 1rem; /* espaçamento entre perguntas */
+      color: #fff;
+      line-height: 1.4;
+    }
+  </style>
+
+
+  <style>
+    /* CTA geral */
+    .cta-btn {
+      display: inline-block;
+      background: hsl(0, 12%, 97%);
+      color: #236903;
+      padding: 14px 22px;
+      border-radius: 6px;
+      text-decoration: none;
+      font-weight: 700;
+      letter-spacing: .4px;
+      box-shadow: 0 6px 18px rgba(0,0,0,0.15);
+      transition: transform .08s ease, box-shadow .08s ease;
+    }
+    .cta-btn:hover { transform: translateY(-2px); box-shadow: 0 10px 22px rgba(0,0,0,0.18); }
+    .cta-center { display:flex; justify-content:center; margin:24px 0; }
+    /* adaptações para se ajustar a seções escuras */
+    #questions.faq .cta-btn { background:#fff; color:#000; }
+  </style>
+
+
+  <!-- CTA - Início (posicione no topo da página) -->
+  <div class="cta-center">
+    <a class="cta-btn" href="https://entrega.logzz.com.br/pay/mem65klow/1-frasco-american-fit-com-desconto-157" target="_blank" rel="noopener noreferrer">QUERO APROVEITAR O DESCONTO</a>
+  </div>
+
+
+  <style>
+    /* Hero / capa usando a imagem enviada (salve a imagem em assets/capa.jpg) */
+    .hero {
+      position: relative;
+      height: 420px;
+      background-image: url('assets/capa.jpg');
+      background-size: cover;
+      background-position: center;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #fff;
+    }
+    .hero::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: rgba(0,0,0,0.35); /* sobreposição para contraste */
+    }
+    .hero .hero-content {
+      position: relative;
+      z-index: 2;
+      width: 100%;
+      max-width: 1200px;
+      padding: 20px;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap: 20px;
+    }
+    .hero .hero-left {
+      flex: 1;
+      color: #fff;
+      font-weight: 800;
+      font-size: 36px;
+      line-height: 1.1;
+    }
+    .hero .hero-ctas {
+      display:flex;
+      gap:12px;
+      flex-shrink:0;
+    }
+    .hero .btn {
+      background:#ff4b3a;
+      color:#fff;
+      padding:12px 18px;
+      border-radius:6px;
+      text-decoration:none;
+      font-weight:700;
+      box-shadow:0 6px 18px rgba(0,0,0,0.15);
+    }
+    .hero .btn.secondary {
+      background: #1db954;
+    }
+
+    @media (max-width:800px){
+      .hero { height: 320px; }
+      .hero .hero-content { flex-direction:column; align-items:flex-start; }
+      .hero .hero-left { font-size: 24px; }
+      .hero .hero-ctas { width:100%; justify-content:flex-start; }
+    }
+  </style>
+</head>
+
+
+  <!-- HERO / CAPA (use a imagem salva em assets/capa.jpg) -->
+  <header class="hero" role="banner" aria-label="Capa American Fit">
+    <div class="hero-content">
+      <div class="hero-left">
+        COMPRE AGORA E PAGUE SOMENTE NA ENTREGA<br>
+        <span style="font-size:28px; opacity:.95;">American Fit</span>
+      </div>
+      <div class="hero-ctas">
+        <a class="btn" href="https://entrega.logzz.com.br/pay/mem65klow/1-frasco-american-fit-com-desconto-157" target="_blank" rel="noopener noreferrer">QUERO APROVEITAR O DESCONTO</a>
+        <a class="btn secondary" href="https://entrega.logzz.com.br/pay/mem65klow/1-frasco-american-fit-com-desconto-157" target="_blank" rel="noopener noreferrer">PAGUE SOMENTE NA ENTREGA</a>
+      </div>
+    </div>
+  </header>
+
